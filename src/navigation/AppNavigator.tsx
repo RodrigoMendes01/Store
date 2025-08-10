@@ -5,11 +5,13 @@ import ProductListScreen from '../screens/ProductListScreen';
 import ProductDetailScreen from '../screens/ProductDetailScreen';
 import { useAuth } from '../context/AuthContext';
 import BottomTabNavigator from '../components/BottomTabNavigator';
+import SettingsScreen from '@screens/SettignsScreen';
 
 export type RootStackParamList = {
   Login: undefined;
   Products: undefined;
   ProductDetail: { id: number };
+  SettingsScreen: undefined
   Tabs: undefined;
 };
 
@@ -34,6 +36,11 @@ const AppNavigator: React.FC = () => {
             name="ProductDetail"
             component={ProductDetailScreen}
             options={{ headerShown: true, title: 'Detalhes' }}
+          />
+          <Stack.Screen
+            name="SettingsScreen"
+            component={SettingsScreen}
+            options={{ headerShown: true }}
           />
         </>
       )}
